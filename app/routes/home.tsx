@@ -99,12 +99,16 @@ export default function Home() {
                   </p>
                 </>
               )}
-              {para.title && index !== 0 && (
+              <div className="w-full max-w-3xl px-4 py-6 overflow-auto">
+                <div className="mt-[-20px]">
+                  {para.title && index !== 0 && (
                     <h2 className="text-xl text-pink-400">{para.title}</h2>
                   )}
                   <p className="text-2xl text-pink-100 leading-relaxed text-justify">
                     {para.text}
                   </p>
+                </div>
+              </div>
               {index === 0 && (
                 <button
                   onClick={() =>
