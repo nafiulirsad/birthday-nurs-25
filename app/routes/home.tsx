@@ -81,10 +81,10 @@ export default function Home() {
         <section
           key={index}
           ref={index === 1 ? nextRef : null}
-          className="snap-center min-h-[80vh] px-6 flex items-center justify-center text-center"
+          className="snap-center min-h-screen px-6 flex items-center justify-center text-center"
         >
           <div className="max-w-3xl w-full fade-in-up">
-            <div className="flex flex-col justify-center items-center min-h-[80vh] space-y-6">
+            <div className="flex flex-col justify-center items-center min-h-[80vh]">
               {index === 0 && (
                 <>
                   <h1 className="text-4xl font-bold text-pink-500">
