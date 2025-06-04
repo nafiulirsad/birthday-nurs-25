@@ -20,13 +20,30 @@ export default function Gallery() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const updateSize = () => {
+    setDimensions({
+      width: window.innerWidth,
+      height: document.documentElement.scrollHeight,
+    });
+  };
+
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const updateSize = () =>
-        setDimensions({ width: window.innerWidth, height: window.innerHeight });
+      const updateSize = () => {
+        setDimensions({
+          width: window.innerWidth,
+          height: window.innerHeight + window.scrollY,
+        });
+      };
+
       updateSize();
       window.addEventListener("resize", updateSize);
-      return () => window.removeEventListener("resize", updateSize);
+      window.addEventListener("scroll", updateSize);
+
+      return () => {
+        window.removeEventListener("resize", updateSize);
+        window.removeEventListener("scroll", updateSize);
+      };
     }
   }, []);
 
