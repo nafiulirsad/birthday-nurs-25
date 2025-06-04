@@ -84,7 +84,7 @@ export default function Home() {
           className="snap-center min-h-screen flex items-center justify-center px-6 text-center"
         >
           <div className="max-w-3xl w-full animate-fadeIn">
-            <div className="flex flex-col items-center justify-center min-h-[80vh] max-h-[90vh] space-y-6">
+            <div className="flex flex-col items-center justify-center min-h-[80vh] space-y-6 px-4 overflow-y-auto max-h-full">
               {index === 0 && (
                 <>
                   <h1 className="text-4xl font-bold text-pink-500">
