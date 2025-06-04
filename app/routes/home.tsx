@@ -59,12 +59,12 @@ export default function Home() {
 
   if (!showContent) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center overflow-hidden">
         <button onClick={handleStart} className="cursor-pointer">
           <img
             src="/assets/tart-cake.jpg"
             alt="Tart Cake"
-            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 hover:scale-110 transition-transform rounded-xl"
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl object-cover"
           />
         </button>
       </div>
@@ -84,7 +84,7 @@ export default function Home() {
           className="snap-center min-h-screen flex items-center justify-center px-6 text-center"
         >
           <div className="max-w-3xl w-full animate-fadeIn">
-            <div className="flex flex-col items-center justify-center min-h-[80vh] space-y-6 px-4 overflow-y-auto max-h-full">
+            <div className="flex flex-col items-center justify-center min-h-[80vh] space-y-6 overflow-y-auto max-h-full">
               {index === 0 && (
                 <>
                   <h1 className="text-4xl font-bold text-pink-500">
@@ -99,7 +99,7 @@ export default function Home() {
                   </p>
                 </>
               )}
-              <div className="w-full max-w-3xl px-4 py-6 overflow-auto">
+              <div className="w-full max-w-3xl py-6 overflow-auto">
                 <div className="mt-[-20px]">
                   {para.title && index !== 0 && (
                     <h2 className="text-xl text-pink-400">{para.title}</h2>
