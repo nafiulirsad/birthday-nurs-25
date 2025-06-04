@@ -64,7 +64,7 @@ export default function Home() {
           <img
             src="/assets/tart-cake.jpg"
             alt="Tart Cake"
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl object-cover"
+            className="w-80 h-80 md:w-80 md:h-80 lg:w-96 lg:h-96 hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl object-cover"
           />
         </button>
       </div>
