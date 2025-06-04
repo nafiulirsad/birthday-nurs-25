@@ -81,7 +81,7 @@ export default function Home() {
         <section
           key={index}
           ref={index === 1 ? nextRef : null}
-          className="snap-center min-h-screen flex items-center justify-center px-6 text-center"
+          className="snap-center min-h-[80vh] max-h-[90vh] flex items-center justify-center px-6 text-center"
         >
           <div className="max-w-3xl w-full animate-fadeIn">
             <div className="flex flex-col items-center justify-center min-h-[80vh] max-h-[90vh] space-y-6">
@@ -99,16 +99,12 @@ export default function Home() {
                   </p>
                 </>
               )}
-              {(para.title || para.text) && (
-                <div className="mt-[-20px]">
-                  {para.title && index !== 0 && (
+              {para.title && index !== 0 && (
                     <h2 className="text-xl text-pink-400">{para.title}</h2>
                   )}
                   <p className="text-2xl text-pink-100 leading-relaxed text-justify">
                     {para.text}
                   </p>
-                </div>
-              )}
               {index === 0 && (
                 <button
                   onClick={() =>
@@ -126,7 +122,7 @@ export default function Home() {
       ))}
 
       {/* CTA Section */}
-      <section className="snap-center min-h-screen flex flex-col items-center justify-center">
+      <section className="snap-center min-h-[80vh] max-h-[90vh] flex flex-col items-center justify-center">
         <Link
           to="/gallery"
           className="bg-pink-600 text-white px-6 py-3 rounded-md text-xl shadow hover:bg-pink-700 transition"
