@@ -17,7 +17,6 @@ export default function Home() {
 
   const handleStart = () => {
     setShowContent(true);
-
     const audio = document.getElementById("background-audio") as HTMLAudioElement;
     if (audio) {
       audio.volume = 1;
@@ -60,7 +59,7 @@ export default function Home() {
 
   if (!showContent) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-[80vh] bg-black flex items-center justify-center">
         <button onClick={handleStart} className="cursor-pointer">
           <img
             src="/assets/tart-cake.jpg"
@@ -82,40 +81,43 @@ export default function Home() {
         <section
           key={index}
           ref={index === 1 ? nextRef : null}
-          className="snap-center min-h-screen flex flex-col items-center justify-center px-6 text-center"
+          className="snap-center min-h-screen px-6 flex items-center justify-center text-center"
         >
-          <div className="max-w-3xl fade-in-up">
-            {index === 0 && (
-              <>
-                <h1 className="text-4xl font-bold text-pink-500 mb-4">
-                  🎉 Selamat Ulang Tahun, <br />
-                  Sayangku Nur Sholikhah! 🎂
-                </h1>
+          <div className="max-w-3xl w-full fade-in-up">
+            <div className="flex flex-col justify-center items-center min-h-[80vh] space-y-6">
+              {index === 0 && (
+                <>
+                  <h1 className="text-4xl font-bold text-pink-500">
+                    🎉 Selamat Ulang Tahun, <br />
+                    Sayangku Nur Sholikhah! 🎂
+                  </h1>
+                  <p className="text-lg text-pink-300">
+                    5 Juni 2000 — Hari ini kamu genap berusia{" "}
+                    <span className="font-semibold text-pink-400">
+                      25 tahun
+                    </span>
+                  </p>
+                </>
+              )}
+              {para.title && index !== 0 && (
+                <h2 className="text-xl text-pink-400">{para.title}</h2>
+              )}
+              <p className="text-2xl text-pink-100 leading-relaxed text-justify">
+                {para.text}
+              </p>
 
-                <p className="text-lg text-pink-300 my-6">
-                  5 Juni 2000 — Hari ini kamu genap berusia{" "}
-                  <span className="font-semibold text-pink-400">25 tahun</span>
-                </p>
-              </>
-            )}
-            {para.title && index !== 0 && (
-              <h2 className="text-xl text-pink-400 mb-4">{para.title}</h2>
-            )}
-            <p className="text-2xl text-pink-100 leading-relaxed text-justify">
-              {para.text}
-            </p>
-
-            {index === 0 && (
-              <button
-                onClick={() =>
-                  nextRef.current?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="mt-10 text-pink-400 animate-bounce text-3xl"
-                aria-label="Scroll ke bawah"
-              >
-                ↓
-              </button>
-            )}
+              {index === 0 && (
+                <button
+                  onClick={() =>
+                    nextRef.current?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="mt-6 text-pink-400 animate-bounce text-3xl"
+                  aria-label="Scroll ke bawah"
+                >
+                  ↓
+                </button>
+              )}
+            </div>
           </div>
         </section>
       ))}
