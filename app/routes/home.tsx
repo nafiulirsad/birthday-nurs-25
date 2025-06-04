@@ -59,7 +59,7 @@ export default function Home() {
 
   if (!showContent) {
     return (
-      <div className="min-h-[80vh] bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <button onClick={handleStart} className="cursor-pointer">
           <img
             src="/assets/tart-cake.jpg"
@@ -81,10 +81,10 @@ export default function Home() {
         <section
           key={index}
           ref={index === 1 ? nextRef : null}
-          className="snap-center min-h-screen px-6 flex items-center justify-center text-center"
+          className="snap-center min-h-screen flex items-center justify-center px-6 text-center"
         >
-          <div className="max-w-3xl w-full fade-in-up">
-            <div className="flex flex-col justify-center items-center min-h-[80vh]">
+          <div className="max-w-3xl w-full animate-fadeIn">
+            <div className="flex flex-col items-center justify-center min-h-[80vh] max-h-[90vh] space-y-6">
               {index === 0 && (
                 <>
                   <h1 className="text-4xl font-bold text-pink-500">
@@ -105,7 +105,6 @@ export default function Home() {
               <p className="text-2xl text-pink-100 leading-relaxed text-justify">
                 {para.text}
               </p>
-
               {index === 0 && (
                 <button
                   onClick={() =>
